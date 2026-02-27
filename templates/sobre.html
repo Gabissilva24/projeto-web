@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvimento com Flask</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2c3e50, #4ca1af);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #1f2a38;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #4ca1af;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background: #eef1f5;
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #1f2a38;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    footer {
+      background: #1f2a38;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #4ca1af;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2c3e50;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Desenvolvimento de Aplicações com Flask</h1>
+    <p>Construindo aplicações web leves, rápidas e escaláveis com Python</p>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">O que é Flask?</a>
+    <a href="#">Vantagens</a>
+    <a href="#">Exemplo</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>O que é Flask?</h2>
+      <p>
+        Flask é um microframework web escrito em Python. Ele é leve, flexível e 
+        ideal para o desenvolvimento de aplicações web simples ou sistemas complexos.
+        Diferente de frameworks mais robustos, o Flask oferece apenas o essencial,
+        permitindo que o desenvolvedor escolha as bibliotecas que deseja utilizar.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Principais Vantagens</h2>
+      <ul>
+        <li>✔ Simplicidade e fácil aprendizado</li>
+        <li>✔ Estrutura minimalista</li>
+        <li>✔ Alta flexibilidade</li>
+        <li>✔ Integração com bancos de dados</li>
+        <li>✔ Grande comunidade e documentação</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Exemplo Básico de Aplicação</h2>
+      <p>Veja abaixo um exemplo simples de aplicação Flask:</p>
+
+      <pre>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Olá, mundo!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+      </pre>
+
+      <p>
+        Neste exemplo, criamos uma aplicação simples que responde à rota principal 
+        (<code>/</code>) exibindo uma mensagem no navegador.
+      </p>
+
+      <a href="#" class="btn">Saiba Mais</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 - Desenvolvimento Web com Flask
+  </footer>
+
+</body>
+</html>

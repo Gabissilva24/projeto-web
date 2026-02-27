@@ -1,6 +1,6 @@
 # Importa a classe Flask da biblioteca flask
 # Sem essa linha, o Python não sabe o que é "Flask"
-from flask import Flask
+from flask import Flask, render_template
 
 # Cria a instância da aplicação Flask
 # __name__ é uma variável especial do Python que contém o nome do módulo atual
@@ -11,10 +11,10 @@ app = Flask(__name__)
 # O decorador @app.route define qual URL aciona esta função
 # '/' é a rota raiz — o endereço principal do site (ex: http://localhost:5000/)
 @app.route('/')
-def pagina_inicial():
+def inicio():
     # Esta função retorna o que o navegador vai receber como resposta
     # Por enquanto, retornamos uma string HTML simples
-    return '<h1>Olá, Gabriele!</h1><p>Meu primeiro servidor Flask está funcionando.</p>'
+    return render_template('index.html')
 
 @app.route('/dream')
 def realizar_dream():
@@ -31,6 +31,26 @@ def varias_linhas():
         <li>Item 3</li>
     <ul>
     '''
+
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
+
+@app.route('/sobre/fatec')
+def sobre_fatec():
+    # Rota /sobre: http://localhost:5000/sobre
+    return '''
+        <h1>Página sobre a Fatec</h1>
+        <p>Desenvolvida na <b>Fatec</b></p>
+    '''
+
+@app.route('/cor/<cor1>')
+def exibir_cor(cor1):
+    return f'<h1 style="color:{cor1}"> A cor escolhida foi: {cor1}</h1>'
+
+@app.route('/bootstrap')
+def ver_algo():
+    return render_template('bootstrap.html')
 
 # Bloco de execução: só roda quando o arquivo é executado diretamente
 if __name__ == '__main__':
