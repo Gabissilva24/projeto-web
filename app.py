@@ -52,6 +52,32 @@ def exibir_cor(cor1):
 def ver_algo():
     return render_template('bootstrap.html')
 
+@app.route('/codigos/<int:ano_nascimento>')
+def exibe_codigos(ano_nascimento):
+    ## ano_nascimento = 1997
+    dados = {
+    "nome": "Gabriele!",
+    "ano_nascimento": ano_nascimento,
+    "idade": (2026 - ano_nascimento),
+    "texto": "Vamos  escrever um texto bem longo para que o truncate funcione!",
+    "ativo": True,
+    "pessoas": ["João", "Maria", "José"]
+    }
+
+    return render_template('codigos.html', **dados)
+
+@app.route('/home')
+def home():
+    return render_template('blocos/home.html')
+
+@app.route('/produtos')
+def produtos():
+    return render_template('blocos/produtos.html')
+
+@app.route('/perfil')
+def perfil():
+    return render_template('blocos/perfil.html')
+
 # Bloco de execução: só roda quando o arquivo é executado diretamente
 if __name__ == '__main__':
     # debug=True ativa o recarregamento automático ao salvar o arquivo

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {%endblock%}</title>
+</head>
+<body>
+    <div style="height: 100px; width: 100%; background: #ccc;">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/produtos">Produtos</a></li>
+            <li><a href="/perfil">Perfil</a></li>
+        </ul>
+    </div>
+
+    {% block conteudo %} {% endblock %}
+
+    <div style="height: 100px; width: 100%; background: black; color: white;">
+        <p>Rodapé</p>
+    </div>
+
+</body>
+</html>
