@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %} {%endblock%}</title>
 </head>
-<body>
-    <div style="height: 100px; width: 100%; background: #ccc;">
-        <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/produtos">Produtos</a></li>
-            <li><a href="/perfil">Perfil</a></li>
+
+<body style="margin:0; min-height:100vh; display:flex; flex-direction:column; font-family:Arial;">
+
+    <div style="height:100px; width:100%; background:#ccc; display:flex; align-items:center; justify-content:center;">
+        
+        <ul style="list-style:none; display:flex; gap:40px; padding:0; margin:0; font-size:20px;">
+            <li><a href="/home" style="text-decoration:none; color:black;">Home</a></li>
+            <li><a href="/produtos" style="text-decoration:none; color:black;">Produtos</a></li>
+            <li><a href="/perfil" style="text-decoration:none; color:black;">Perfil</a></li>
         </ul>
+
     </div>
 
-    {% block conteudo %} {% endblock %}
+    <div style="flex:1;">
+        {% block conteudo %} {% endblock %}
+    </div>
 
-    <div style="height: 100px; width: 100%; background: black; color: white;">
-        <p>Rodapé</p>
+    <div style="height:100px; width:100%; background:black; color:white; display:flex; align-items:center; justify-content:center;">
+        <p style="margin:0;">Rodapé</p>
     </div>
 
 </body>
